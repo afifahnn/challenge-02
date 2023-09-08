@@ -39,17 +39,7 @@ const dataPenjualanNovel = [
 
 // format rupiah
 function formatRupiah(number) {
-  let rupiah = '';
-  const numberString = String(number);
-
-  for (let i = 0; i < numberString.length; i++) {
-    rupiah += numberString[i];
-    if ((numberString.length - 1 - i) % 3 === 0 && i !== numberString.length - 1) {
-      rupiah += '.';
-    }
-  }
-
-  return `Rp. ${rupiah}`;
+  return number.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' });
 }
 
 // function tugasnya
